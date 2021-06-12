@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Clima</title>
+		<link rel="icon" href="assets/weather.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<main class="main">
+			<div class="contenedor-form">
+				<div class="header-form">Obten el clima de tu ciudad</div>
+				<form action="#" class="form" id="formulario">
+					<div class="form__campo">
+						<label for="ciudad" class="form__label">Ciudad</label>
+						<input
+							type="text"
+							class="form__input"
+							id="ciudad"
+							placeholder="Introduce el nombre de la ciudad"
+							required
+						/>
+					</div>
+					<!-- <div class="form__campo">
+						<label for="pais" class="form__label">Paises</label>
+						<select name="pais" id="pais" class="form__select">
+							<option value="">Seleccione una opcion</option>
+							<option value="AR">Argentina</option>
+						</select>
+					</div> -->
+
+					<input
+						type="submit"
+						class="form__submit"
+						value="Obtener Clima"
+						id="btnSubmit"
+					/>
+				</form>
+			</div>
+			<div id="result" class="result"></div>
+		</main>
+		<template id="templateClima">
+			<div class="container-clima">
+				<div class="clima__header">
+					<h3 class="clima__city" id="clima__city"></h3>
+				</div>
+				<figure class="clima__figure">
+					<img
+						src="assets/weather.png"
+						alt="Icono del clima actual"
+						class="clima__img"
+						id="clima__img"
+					/>
+				</figure>
+				<div class="clima">
+					<h3 class="clima__temp" id="clima__temp"></h3>
+					<p class="clima__p">
+						<span
+							class="clima__temp-min"
+							id="clima__temp-min"
+						></span>
+						<span class="clima__min">Min</span>
+					</p>
+					<p class="clima__p">
+						<span
+							class="clima__temp-max"
+							id="clima__temp-max"
+						></span>
+						<span class="clima__max">Max</span>
+					</p>
+				</div>
+				<div class="clima__footer">
+					<h3 class="clima__description" id="clima__description"></h3>
+				</div>
+			</div>
+		</template>
+		<template id="templateAlerta">
+			<div class="alerta">La ciudad introducida no es valida</div>
+		</template>
+		<script src="js/weather.js" type="module"></script>
+	</body>
+</html>

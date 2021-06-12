@@ -1,0 +1,164 @@
+html {
+	box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+@mixin input() {
+	height: 48px;
+	border: 1px solid #777;
+	padding: 8px 10px;
+	background-color: #eee;
+	border-radius: 5px;
+	font-size: 16px;
+	font-family: inherit;
+	&:focus {
+		outline: 2px solid rgb(70, 70, 130);
+		border-radius: 0px;
+		border-color: transparent;
+	}
+}
+@mixin center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+body {
+	background-color: #ccc;
+	font-family: "Raleway", sans-serif;
+}
+.main {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 24px;
+}
+.contenedor-form {
+	max-width: 640px;
+	margin: 0 auto;
+	border-radius: 5px;
+	margin-bottom: 24px;
+}
+.header-form {
+	height: 64px;
+	background-color: rgb(70, 70, 130);
+	@include center();
+	color: white;
+	font-size: 22px;
+}
+.form {
+	padding: 24px;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgb(70, 70, 130);
+	border-top: none;
+}
+.form__campo {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 16px;
+}
+.form__label {
+	font-size: 18px;
+	margin-bottom: 2px;
+}
+.form__input {
+	@include input();
+}
+.form__select {
+	@include input();
+}
+.form__submit {
+	@include center();
+	margin-top: auto;
+	width: 100%;
+	height: 48px;
+	font-family: inherit;
+	font-weight: 500;
+	font-size: 20px;
+	background-color: rgb(70, 70, 130);
+	border: none;
+	border-radius: 5px;
+	color: white;
+}
+.form__submit:hover {
+	cursor: pointer;
+}
+// Result API
+.result {
+	max-width: 640px;
+	margin: 0 auto;
+}
+.container-clima {
+	width: 380px;
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	border: 2px solid rgb(70, 70, 130);
+	background-color: #eee;
+	margin: auto;
+}
+.clima__header,
+.clima__footer {
+	height: 48px;
+	flex-basis: 100%;
+	@include center();
+	background-color: rgb(70, 70, 130);
+
+	.clima__city,
+	.clima__description {
+		font-weight: 500;
+		font-size: 20px;
+		color: white;
+		text-transform: capitalize;
+	}
+}
+.clima__figure {
+	flex-basis: 45%;
+	@include center();
+	border-right: 2px solid rgb(70, 70, 130);
+}
+.clima {
+	flex-basis: 55%;
+	height: 140px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.clima__temp {
+	flex-basis: 100%;
+	@include center();
+	font-size: 48px;
+}
+.clima__p,
+.clima__p {
+	flex-basis: 50%;
+	@include center();
+	flex-direction: column;
+}
+.clima__temp-min,
+.clima__temp-max {
+	@include center();
+	font-size: 24px;
+	font-weight: 400;
+	margin-bottom: 4px;
+}
+.clima__min,
+.clima__max {
+	font-size: 16px;
+	font-weight: 300;
+}
+// UI
+.alerta {
+	@include center();
+	max-width: 640px;
+	height: 48px;
+	margin: 0 auto;
+	background-color: rgb(255, 217, 217);
+	border: 1px solid rgb(177, 35, 35);
+	color: rgb(177, 35, 35);
+	font-size: 18px;
+	font-weight: 500;
+}
